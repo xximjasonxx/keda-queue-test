@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Yaml", "Yaml", "{02CB9829-16EB-401F-BD00-501813DF3399}"
+ProjectSection(SolutionItems) = preProject
+	keda-scaledjob.yaml = keda-scaledjob.yaml
+EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintMessage", "PrintMessage\PrintMessage.csproj", "{FB7B1AAC-059E-4230-B204-3F85F3C477C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendMessage", "SendMessage\SendMessage.csproj", "{4782617A-2701-424A-AEE4-902586C28C11}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB7B1AAC-059E-4230-B204-3F85F3C477C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB7B1AAC-059E-4230-B204-3F85F3C477C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB7B1AAC-059E-4230-B204-3F85F3C477C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB7B1AAC-059E-4230-B204-3F85F3C477C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4782617A-2701-424A-AEE4-902586C28C11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4782617A-2701-424A-AEE4-902586C28C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4782617A-2701-424A-AEE4-902586C28C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4782617A-2701-424A-AEE4-902586C28C11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

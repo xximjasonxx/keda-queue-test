@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: queue-storage-connection-string
+  namespace: keda-test
+  
+data:
+  connection-string: ""
+
+---
+
+apiVersion: keda.sh/v1alpha1
+kind: TriggerAuthentication
+metadata:
+  name: az-test-queue-auth
+  namespace: keda-test
+
+spec:
+  secretTargetRef:
+    - key: connection-string
+      name: queue-storage-connection-string
+      parameter: connection
+
+---
+
+apiVersion: keda.sh/v1alpha1
+kind: Scaledjob
+metadata:
+  name: queue-scaled-job
+  namespace: keda-test
+
+spec:
+  pollingInterval: 5
+  triggers:
+    - type: azure-queue
+      metadata:
+        queueName: test-queue
+        queueLenth: "5"
+      authenticationRef:
+        name: az-test-queue-auth
+  
+  jobTargetRef:
+    parallelism: 4
+    completions: 1
+    activeDeadlineSeconds: 600
+    template:
+      metadata:
+        name: echo-number-job
+      
+      spec:
+        containers:
+          - name: print-container
+            image: xximjasonxx/printmessage:v3
