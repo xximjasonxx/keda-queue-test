@@ -24,7 +24,7 @@ spec:
 ---
 
 apiVersion: keda.sh/v1alpha1
-kind: Scaledjob
+kind: ScaledJob
 metadata:
   name: queue-scaled-job
   namespace: keda-test
@@ -52,8 +52,8 @@ spec:
           - name: print-container
             image: xximjasonxx/printmessage:v3
             env:
-              name: ConnectionString
-              valueFrom:
-                secretKeyRef:
-                  name: queue-storage-connection-string
-                  key: connection-string
+              - name: ConnectionString
+                valueFrom:
+                  secretKeyRef:
+                    name: queue-storage-connection-string
+                    key: connection-string

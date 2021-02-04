@@ -9,9 +9,9 @@ namespace SendMessage
     {
         static void Main(string[] args)
         {
-            string connectionString = Environment.GetEnvironmentVariable("ConnectionString");
+            string connectionString = args[0];
             const string queueName = "test-queue";
-            int numberOfMessagesToSend = int.Parse(args[0]);
+            int numberOfMessagesToSend = int.Parse(args[1]);
 
             Console.WriteLine($"Sending {numberOfMessagesToSend} to Queue");
 
