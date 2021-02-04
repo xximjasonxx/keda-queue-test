@@ -51,3 +51,9 @@ spec:
         containers:
           - name: print-container
             image: xximjasonxx/printmessage:v3
+            env:
+              name: ConnectionString
+              valueFrom:
+                secretKeyRef:
+                  name: queue-storage-connection-string
+                  key: connection-string
