@@ -40,9 +40,10 @@ spec:
         name: az-test-queue-auth
   
   jobTargetRef:
-    parallelism: 4
-    completions: 1
+    parallelism: 1
+    completions: 10
     activeDeadlineSeconds: 600
+    backoffLimit: 1
     template:
       metadata:
         name: echo-number-job
